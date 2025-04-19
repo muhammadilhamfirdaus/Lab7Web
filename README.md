@@ -2,9 +2,9 @@
 
 ## Universitas Pelita Bangsa  
 **Mata Kuliah:** Pemrograman Web 2  
-**Dosen Pengampu:** Agung Nugroho  
-**Nama Mahasiswa:** [Isi Nama Anda]  
-**NIM:** [Isi NIM Anda]  
+**Dosen Pengampu:** Agung Nugroho,S.Kom., M.Kom
+**Nama Mahasiswa:** M Ilham Firdaus
+**NIM:** 312310021
 
 ---
 
