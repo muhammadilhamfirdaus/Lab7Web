@@ -48,4 +48,4 @@ XAMPP Control Panel → Apache → Config → `php.ini` → hapus `;` di depan e
 2. Arahkan ke folder `ci4`:
    ```bash
    cd xampp/htdocs/lab11_ci/ci4
->>>>>>> 2a20edf1d22d99a71a54d3edafc39c07a057352b
+
