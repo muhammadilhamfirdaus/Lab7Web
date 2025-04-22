@@ -20,3 +20,19 @@
 ![xampp](img/8.png)
 
 ## Praktikum 2: Framework Lanjutan (CRUD)
+
+![xampp](img/9.png)
+
+![xampp](img/10.png)
+
+![xampp](img/11.png)
+
+![xampp](img/12.png)
+
+![xampp](img/13.png)
+
+![xampp](img/14.png)
+
+![xampp](img/15.png)
+
+![xampp](img/16.png)
