@@ -1,7 +1,7 @@
 </div> <!-- penutup container -->
 
 <footer>
-    &copy; 2021 - Universitas Pelita Bangsa
+<p>&copy; 2025 - Admin Universitas Pelita Bangsa (M Ilham Firdaus)</p>
 </footer>
 
 
