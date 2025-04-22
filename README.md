@@ -3,7 +3,7 @@
 ![xampp](img/intl.png)
 ![xampp](img/1.png)
 ![xampp](img/2.png)
-![xampp](img/3.png)
+![xampp](img/3u.png)
 ![xampp](img/4.png)
 ![xampp](img/5.png)
 ![xampp](img/6.png)
