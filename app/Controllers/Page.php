@@ -6,24 +6,22 @@ class Page extends BaseController
 {
     public function about()
     {
-        return view('about', [
-            'title' => 'Halaman About',
-            'content' => 'Ini adalah halaman about yang menjelaskan isi halaman ini.'
+        return view('view/about', [
+            'title' => 'Halaman Abot',
+            'content' => 'Ini adalah halaman abaut yang menjelaskan tentang isi
+            halaman ini.'
         ]);
     }
-    
-
     public function contact()
     {
         echo "Ini halaman Contact";
     }
-
     public function faqs()
     {
         echo "Ini halaman FAQ";
     }
-    public function tos(){
-    echo "Ini halaman Term of Services";
+    public function tos()
+    {
+        echo "ini halaman Term of Services";
     }
-
 }
