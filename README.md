@@ -1,3 +1,10 @@
+Nama           : M Ilham Firdaus
+Kelas          : TI.23.C1
+NIM            : 312310021
+Mata Kuliah    : Pemrograman Web 2
+Dosen Pengampu : Agung Nugroho, S.Kom., M.Kom
+Universitas    : Universitas Pelita Bangsa
+
 ## Hasil Praktikum 1: PHP Framework (Codeigniter)
 ![xampp](img/xampp.png)
 
