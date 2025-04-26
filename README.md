@@ -35,4 +35,20 @@
 
 ![xampp](img/15.png)
 
+## Praktikum 3: View Layout dan View Cell
+
+![xampp](img/16.png)
+
+Penjelasan
+
+1. Manfaat View Layout: memudahkan pembuatan tampilan konsisten dan DRY (Don't Repeat Yourself).
+
+2. Perbedaan View Cell vs View biasa:
+
+  - View Biasa: hanya digunakan langsung di controller.
+
+  - View Cell: bisa digunakan berulang kali seperti komponen/modul.
+
+3. Modifikasi View Cell untuk hanya menampilkan post dengan kategori tertentu.
+
 
