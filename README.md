@@ -94,15 +94,19 @@ Form login dibuat lebih menarik menggunakan Bootstrap.
 #### 5. Membuat Seeder `UserSeeder.php`
 Seeder dibuat untuk mengisi data user admin menggunakan:
 `bash
-php spark db:seed UserSeeder````\
+php spark db:seed UserSeeder 
 
+#### 6. Membuat Filter Auth.php
 #### 6. Membuat Filter Auth.php
 Digunakan untuk melindungi halaman admin dari akses tanpa login.
 
 Screenshot:
 
 #### 7. Konfigurasi Routing
+#### 7. Konfigurasi Routing
 Menambahkan route untuk login, logout, dan halaman admin yang dilindungi oleh filter auth.
+
+Screenshot:
 
 #### 8. Uji Login, Logout, dan Proteksi Admin
 Login berhasil akan diarahkan ke halaman admin.
@@ -110,3 +114,24 @@ Login berhasil akan diarahkan ke halaman admin.
 Logout akan menghapus session dan kembali ke login.
 
 Akses langsung ke /admin/artikel akan diarahkan ke /user/login jika belum login.
+
+## Praktikum 5: Pagination dan Pencarian
+
+### 1. Pagination
+Saya mengedit controller Artikel untuk menampilkan daftar artikel menggunakan paginate(3) dan menampilkan pagination links di view.
+
+**Screenshot:**
+![pagination](img/pagination.png)
+
+### 2. Pencarian
+Saya menambahkan fitur pencarian dengan query `q`, melakukan filter `like('judul', $q)` dan menyesuaikan tampilan form di view.
+
+**Screenshot:**
+![search](img/search.png)
+
+### 3. Uji Coba
+- Pagination muncul saat data lebih dari 3.
+- Pencarian berhasil menampilkan data yang relevan.
+
+**Screenshot:**
+![hasil](img/hasil-cari.png)

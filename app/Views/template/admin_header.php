@@ -58,7 +58,7 @@
 <body>
 
 <div class="header">
-    Admin Portal Berita
+    📰 Admin Portal Berita
 </div>
 
 <div class="navbar">

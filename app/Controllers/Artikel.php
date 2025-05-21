@@ -30,14 +30,20 @@ class Artikel extends BaseController
     public function admin_index()
     {
         $title = 'Daftar Artikel';
+        $q = $this->request->getVar('q') ?? '';
         $model = new ArtikelModel();
-        $artikel = $model->findAll();
-        return view('artikel/admin_index', compact('artikel', 'title'));
+        $data = [
+            'title' => $title,
+            'q' => $q,
+            'artikel' => $model->like('judul', $q)->paginate(3),
+            'pager' => $model->pager,
+        ];
+        return view('artikel/admin_index', $data);
     }
 
     public function add()
     {
-        $validation =  \Config\Services::validation();
+        $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
 
@@ -58,7 +64,7 @@ class Artikel extends BaseController
     public function edit($id)
     {
         $artikel = new ArtikelModel();
-        $validation =  \Config\Services::validation();
+        $validation = \Config\Services::validation();
         $validation->setRules(['judul' => 'required']);
         $isDataValid = $validation->withRequest($this->request)->run();
 
