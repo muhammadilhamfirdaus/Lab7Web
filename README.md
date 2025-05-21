@@ -133,3 +133,16 @@ Saya menambahkan fitur pencarian dengan query `q`, melakukan filter `like('judul
 
 **Screenshot:**
 ![hasil](img/hasil-cari.png)
+
+
+
+## Praktikum 6: Upload File Gambar
+- Menambahkan input file `gambar` di form `artikel/form_add.php`
+- Menyesuaikan tag `<form>` dengan `enctype="multipart/form-data"`
+- Mengupdate method `add()` pada `Artikel.php` untuk menyimpan file gambar ke folder `public/gambar`
+- Menyimpan nama file gambar ke database
+
+![hasil](img/upload.png)
+
+![hasil](img/databaseupload.png)
+
