@@ -26,3 +26,12 @@ $routes->group('admin', function($routes) {
     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
     $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
 });
+
+
+// Routes Login & Logout
+$routes->get('/user/login', 'User::login');
+$routes->post('/user/login', 'User::login');
+$routes->get('/user/logout', 'User::logout');
+
+// Route admin yang diproteksi filter auth
+$routes->get('/admin/artikel', 'Admin\Artikel::index', ['filter' => 'auth']);

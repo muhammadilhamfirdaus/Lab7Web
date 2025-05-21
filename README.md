@@ -64,4 +64,51 @@ Penjelasan
 
 3. Modifikasi View Cell untuk hanya menampilkan post dengan kategori tertentu.
 
+## Praktikum 4: Login System (Modul Login - CodeIgniter 4)
 
+### 🔧 Langkah-Langkah:
+
+#### 1. Membuat Tabel `user` di Database
+Saya membuat tabel `user` dengan struktur: `id`, `username`, `useremail`, `userpassword`.
+
+**Screenshot:**
+![db_user](img/db_user.png)
+
+#### 2. Membuat Model `UserModel.php`
+Model dibuat untuk menangani data login di `app/Models/UserModel.php`.
+
+
+
+#### 3. Membuat Controller `User.php`
+Berisi method `login()`, `logout()`, dan `index()` untuk login system.
+
+**Screenshot:**
+![controller](img/user_controller.png)
+
+#### 4. Membuat View `login.php`
+Form login dibuat lebih menarik menggunakan Bootstrap.
+
+**Screenshot:**
+![login_view](img/login_view.png)
+
+#### 5. Membuat Seeder `UserSeeder.php`
+Seeder dibuat untuk mengisi data user admin menggunakan:
+```bash
+php spark db:seed UserSeeder 
+
+6. Membuat Filter Auth.php
+Digunakan untuk melindungi halaman admin dari akses tanpa login.
+
+Screenshot:
+
+7. Konfigurasi Routing
+Menambahkan route untuk login, logout, dan halaman admin yang dilindungi oleh filter auth.
+
+Screenshot:
+
+8. Uji Login, Logout, dan Proteksi Admin
+Login berhasil akan diarahkan ke halaman admin.
+
+Logout akan menghapus session dan kembali ke login.
+
+Akses langsung ke /admin/artikel akan diarahkan ke /user/login jika belum login.
