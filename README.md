@@ -142,7 +142,11 @@ Saya menambahkan fitur pencarian dengan query `q`, melakukan filter `like('judul
 - Mengupdate method `add()` pada `Artikel.php` untuk menyimpan file gambar ke folder `public/gambar`
 - Menyimpan nama file gambar ke database
 
+tambah artikel
+
 ![hasil](img/upload.png)
+
+gambar masuk ke database
 
 ![hasil](img/databaseupload.png)
 
