@@ -93,20 +93,18 @@ Form login dibuat lebih menarik menggunakan Bootstrap.
 
 #### 5. Membuat Seeder `UserSeeder.php`
 Seeder dibuat untuk mengisi data user admin menggunakan:
-```bash
-php spark db:seed UserSeeder 
+`bash
+php spark db:seed UserSeeder````\
 
-6. Membuat Filter Auth.php
+#### 6. Membuat Filter Auth.php
 Digunakan untuk melindungi halaman admin dari akses tanpa login.
 
 Screenshot:
 
-7. Konfigurasi Routing
+#### 7. Konfigurasi Routing
 Menambahkan route untuk login, logout, dan halaman admin yang dilindungi oleh filter auth.
 
-Screenshot:
-
-8. Uji Login, Logout, dan Proteksi Admin
+#### 8. Uji Login, Logout, dan Proteksi Admin
 Login berhasil akan diarahkan ke halaman admin.
 
 Logout akan menghapus session dan kembali ke login.
