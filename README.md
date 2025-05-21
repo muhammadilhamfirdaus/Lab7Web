@@ -97,12 +97,10 @@ Seeder dibuat untuk mengisi data user admin menggunakan:
 php spark db:seed UserSeeder 
 
 #### 6. Membuat Filter Auth.php
-#### 6. Membuat Filter Auth.php
+
 Digunakan untuk melindungi halaman admin dari akses tanpa login.
 
-Screenshot:
 
-#### 7. Konfigurasi Routing
 #### 7. Konfigurasi Routing
 Menambahkan route untuk login, logout, dan halaman admin yang dilindungi oleh filter auth.
 
