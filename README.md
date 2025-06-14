@@ -150,3 +150,35 @@ gambar masuk ke database
 
 ![hasil](img/databaseupload.png)
 
+
+# Praktikum 7 - Relasi Tabel dan Query Builder
+
+## Deskripsi
+Modul ini membahas cara menghubungkan tabel artikel dan kategori menggunakan relasi One-to-Many di CodeIgniter 4, serta memanfaatkan Query Builder.
+
+## Fitur
+- Relasi One-to-Many antara artikel dan kategori.
+- Tambah/Edit/Hapus artikel dengan pemilihan kategori.
+- Tampilan daftar artikel dengan kategori.
+- Filter dan pencarian artikel berdasarkan kategori.
+
+## Screenshots
+### Tampilan Daftar Artikel (Admin)
+![admin_index](img/admin_index.png)
+
+### Tambah Artikel
+![form_add](img/form_add.png)
+
+### Edit Artikel
+![form_edit](img/form_edit.png)
+
+### Tampilan Artikel di Halaman Depan
+![index](img/index.png)
+
+## Langkah Pengerjaan
+1. Membuat tabel `kategori`
+2. Menambahkan foreign key di tabel `artikel`
+3. Membuat `KategoriModel`
+4. Modifikasi `ArtikelModel` dan `Artikel Controller`
+5. Modifikasi semua view
+6. Testing fungsi: tambah, edit, hapus, filter artikel

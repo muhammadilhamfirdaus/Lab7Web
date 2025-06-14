@@ -11,7 +11,7 @@
                 type="text" 
                 name="judul" 
                 id="judul" 
-                value="<?= $data['judul']; ?>" 
+                value="<?= esc($artikel['judul']); ?>" 
                 style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" 
                 required>
         </div>
@@ -24,7 +24,24 @@
                 cols="50" 
                 rows="10" 
                 style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;" 
-                required><?= $data['isi']; ?></textarea>
+                required><?= esc($artikel['isi']); ?></textarea>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label for="id_kategori" style="display: block; font-weight: bold; margin-bottom: 8px;">Kategori</label>
+            <select 
+                name="id_kategori" 
+                id="id_kategori" 
+                required 
+                style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                <?php foreach ($kategori as $k): ?>
+                    <option 
+                        value="<?= $k['id_kategori']; ?>" 
+                        <?= ($artikel['id_kategori'] == $k['id_kategori']) ? 'selected' : ''; ?>>
+                        <?= esc($k['nama_kategori']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
 
         <div style="text-align: right;">

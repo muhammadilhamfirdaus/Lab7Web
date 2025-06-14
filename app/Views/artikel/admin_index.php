@@ -3,10 +3,20 @@
 <div class="container py-4">
     <h2 class="mb-4">Daftar Artikel</h2>
 
-    <!-- Form Pencarian -->
+    <!-- Form Pencarian & Filter Kategori -->
     <form method="get" class="row mb-3">
-        <div class="col-md-10">
+        <div class="col-md-5">
             <input type="text" name="q" value="<?= $q; ?>" class="form-control" placeholder="Cari judul artikel...">
+        </div>
+        <div class="col-md-5">
+            <select name="kategori_id" class="form-select">
+                <option value="">-- Semua Kategori --</option>
+                <?php foreach ($kategori as $k): ?>
+                    <option value="<?= $k['id_kategori']; ?>" <?= $kategori_id == $k['id_kategori'] ? 'selected' : ''; ?>>
+                        <?= esc($k['nama_kategori']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="col-md-2">
             <button type="submit" class="btn btn-primary w-100">Cari</button>
@@ -20,6 +30,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Judul</th>
+                    <th scope="col">Kategori</th>
                     <th scope="col">Status</th>
                     <th scope="col">Aksi</th>
                 </tr>
@@ -34,6 +45,7 @@
                                 <br>
                                 <small class="text-muted"><?= esc(substr($row['isi'], 0, 50)); ?>...</small>
                             </td>
+                            <td><?= esc($row['nama_kategori']); ?></td>
                             <td>
                                 <span class="badge bg-<?= $row['status'] == 'draft' ? 'secondary' : 'success'; ?>">
                                     <?= ucfirst($row['status']); ?>
@@ -52,7 +64,7 @@
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="4" class="text-center">Belum ada data.</td>
+                        <td colspan="5" class="text-center">Belum ada data.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
@@ -61,7 +73,7 @@
 
     <!-- Pagination -->
     <div class="d-flex justify-content-center mt-4">
-        <?= $pager->only(['q'])->links(); ?>
+        <?= $pager->only(['q', 'kategori_id'])->links(); ?>
     </div>
 </div>
 
