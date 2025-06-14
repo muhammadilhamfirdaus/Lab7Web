@@ -20,7 +20,7 @@ $routes->get('/artikel', 'Artikel::index');
 $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 
-$routes->group('admin', function($routes) {
+$routes->group('admin', function ($routes) {
     $routes->get('artikel', 'Artikel::admin_index');
     $routes->add('artikel/add', 'Artikel::add');
     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
@@ -35,3 +35,11 @@ $routes->get('/user/logout', 'User::logout');
 
 // Route admin yang diproteksi filter auth
 $routes->get('/admin/artikel', 'Admin\Artikel::index', ['filter' => 'auth']);
+
+// AJAX routes
+$routes->get('/ajax', 'AjaxController::index');
+$routes->get('/ajax/getData', 'AjaxController::getData');
+$routes->get('/ajax/edit/(:num)', 'AjaxController::edit/$1');
+$routes->post('/ajax/save', 'AjaxController::save');
+$routes->post('/ajax/update/(:num)', 'AjaxController::update/$1');
+$routes->delete('/ajax/delete/(:num)', 'AjaxController::delete/$1');
