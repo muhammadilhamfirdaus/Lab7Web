@@ -268,6 +268,10 @@ Modul ini membahas penggunaan AJAX untuk menampilkan dan menghapus data artikel 
 ---
 
 
+# Praktikum 10 - Membuat REST API dengan CodeIgniter 4
+
+Modul ini membahas bagaimana membuat RESTful API menggunakan CodeIgniter 4. Fokus utama adalah mengakses data artikel menggunakan metode HTTP seperti GET, POST, PUT, dan DELETE.
+
 ## 🧱 Langkah-langkah Praktikum
 
 ## 🔧 1. Persiapan
@@ -387,3 +391,5 @@ CodeIgniter 4 menyediakan ResourceController untuk membangun API dengan cepat.
 Penggunaan Postman sangat membantu dalam proses pengujian endpoint HTTP.
 
 Format JSON disarankan untuk komunikasi data antar aplikasi.
+
+

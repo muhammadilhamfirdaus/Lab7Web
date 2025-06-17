@@ -50,5 +50,10 @@ $routes->delete('/ajax/delete/(:num)', 'AjaxController::delete/$1');
 $routes->get('/api/post', 'Artikel::postApi');
 
 $routes->resource('post', ['controller' => 'PostApi']);
+$routes->options('post', 'PostApi::options');
+$routes->options('post/(:any)', 'PostApi::options');
+
+
+
 
 

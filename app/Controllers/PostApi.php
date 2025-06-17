@@ -7,14 +7,26 @@ use App\Models\ArtikelModel;
 
 class PostApi extends ResourceController
 {
+    // CORS helper
+    private function setCors()
+    {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Headers: Content-Type");
+    }
+
     public function index()
     {
+        $this->setCors();
+
         $model = new ArtikelModel();
         return $this->respond($model->findAll(), 200);
     }
 
     public function create()
     {
+        $this->setCors();
+
         $model = new ArtikelModel();
         $data = [
             'judul' => $this->request->getVar('judul'),
@@ -35,13 +47,14 @@ class PostApi extends ResourceController
 
     public function update($id = null)
     {
+        $this->setCors();
+
         $model = new ArtikelModel();
 
         if (!$model->find($id)) {
             return $this->failNotFound("Data dengan ID $id tidak ditemukan");
         }
 
-        // Baca manual data dari PUT form
         parse_str(file_get_contents("php://input"), $data);
 
         if (empty($data['judul']) || empty($data['isi'])) {
@@ -56,9 +69,10 @@ class PostApi extends ResourceController
         ]);
     }
 
-
     public function delete($id = null)
     {
+        $this->setCors();
+
         $model = new ArtikelModel();
 
         if (!$model->find($id)) {
@@ -70,5 +84,12 @@ class PostApi extends ResourceController
             'status' => 200,
             'message' => 'Data berhasil dihapus'
         ]);
+    }
+
+    // WAJIB UNTUK CORS (preflight OPTIONS)
+    public function options()
+    {
+        $this->setCors();
+        return $this->respond(null, 200);
     }
 }
