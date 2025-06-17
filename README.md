@@ -266,3 +266,124 @@ Modul ini membahas penggunaan AJAX untuk menampilkan dan menghapus data artikel 
 | 4️⃣ | Pagination AJAX berhasil | Klik halaman 2, data berubah tanpa reload |
 ![screenshot](img/pagination_klik.png)
 ---
+
+
+## 🧱 Langkah-langkah Praktikum
+
+## 🔧 1. Persiapan
+Buka kembali folder project sebelumnya lab7_php_ci di htdocs (XAMPP).
+
+Jalankan server lokal dan pastikan URL http://localhost:8080 bisa diakses.
+
+📸 Screenshot tampilan awal project
+![screenshot](img/hasil_api_delete.png)
+
+## 📦 2. Install Postman
+
+Unduh Postman dari https://www.postman.com/downloads/
+
+Gunakan untuk menguji endpoint API.
+
+📸 Screenshot aplikasi Postman
+![screenshot](img/postman.png)
+
+## 🛠 3. Membuat Controller RESTful PostApi.php
+
+Lokasi: app/Controllers/PostApi.php
+
+
+// lihat kode lengkap di file PostApi.php
+📸 Screenshot file controller PostApi.php di VSCode
+![screenshot](img/hasil_api_delete.png)
+
+## 🧭 4. Tambahkan Routing API
+
+Edit file app/Config/Routes.php:
+tambahkan 
+
+ $routes->resource('post', ['controller' => 'PostApi']);
+
+📸 Screenshot baris kode routes
+![screenshot](img/controller_api_post.png)
+
+## 🧪 5. Uji Endpoint dengan Postman
+
+✅ a. GET – Menampilkan Semua Data
+Method: GET
+
+URL: http://localhost:8080/post
+
+📸 Screenshot hasil GET semua data di Postman
+![screenshot](img/api_get.png)
+
+Hasil
+![screenshot](img/hasil_api_get.png)
+
+✅ b. POST – Menambahkan Data
+Method: POST
+
+Body (x-www-form-urlencoded):
+
+judul: Ini dari Postman
+
+isi: ini berhasil
+
+📸 Screenshot hasil POST di Postman
+![screenshot](img/api_post.png)
+
+Hasil
+![screenshot](img/hasil_api_post.png)
+
+✅ c. PUT – Mengubah Data
+Method: PUT
+
+URL: http://localhost:8080/postapi/1
+
+Body (raw, JSON):
+
+json
+Salin
+Edit
+{
+  "judul": "Ini dari postman gas",
+  "isi": "ini berhasil"
+}
+
+atau
+
+Body (x-www-form-urlencoded):
+
+judul: Ini dari postman gas
+
+isi: ini berhasil
+
+Header:
+
+Content-Type: application/json
+
+📸 Screenshot hasil PUT di Postman
+![screenshot](img/api_put.png)
+
+
+hasil
+![screenshot](img/hasil_api_put.png)
+
+✅ d. DELETE – Menghapus Data
+Method: DELETE
+
+URL: http://localhost:8080/postapi/1
+
+📸 Screenshot hasil DELETE di Postman
+![screenshot](img/api_delete.png)
+
+Hasil
+![screenshot](img/hasil_api_delete.png)
+
+## 🧾 Kesimpulan
+REST API mempermudah integrasi backend dan frontend.
+
+CodeIgniter 4 menyediakan ResourceController untuk membangun API dengan cepat.
+
+Penggunaan Postman sangat membantu dalam proses pengujian endpoint HTTP.
+
+Format JSON disarankan untuk komunikasi data antar aplikasi.

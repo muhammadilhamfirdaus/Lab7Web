@@ -46,3 +46,9 @@ $routes->get('/ajax/edit/(:num)', 'AjaxController::edit/$1');
 $routes->post('/ajax/save', 'AjaxController::save');
 $routes->post('/ajax/update/(:num)', 'AjaxController::update/$1');
 $routes->delete('/ajax/delete/(:num)', 'AjaxController::delete/$1');
+
+$routes->get('/api/post', 'Artikel::postApi');
+
+$routes->resource('post', ['controller' => 'PostApi']);
+
+

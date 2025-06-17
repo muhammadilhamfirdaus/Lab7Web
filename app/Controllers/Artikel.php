@@ -137,4 +137,16 @@ class Artikel extends BaseController
         $artikel->delete($id);
         return redirect()->to('/admin/artikel');
     }
+
+    public function postApi()
+    {
+        $model = new ArtikelModel();
+        $artikel = $model->orderBy('id', 'DESC')->findAll();
+
+        return $this->response->setJSON([
+            'status' => 200,
+            'data' => $artikel
+        ]);
+    }
+
 }
