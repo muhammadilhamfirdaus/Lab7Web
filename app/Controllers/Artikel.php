@@ -31,35 +31,39 @@ class Artikel extends BaseController
 
     public function admin_index()
     {
-        $title = 'Daftar Artikel (Admin)';
         $q = $this->request->getVar('q') ?? '';
         $kategori_id = $this->request->getVar('kategori_id') ?? '';
+        $page = (int) ($this->request->getVar('page') ?? 1);
 
         $model = new ArtikelModel();
 
-        $builder = $model->table('artikel')
-            ->select('artikel.*, kategori.nama_kategori')
-            ->join('kategori', 'kategori.id_kategori = artikel.id_kategori');
+        $builder = $model->select('artikel.*, kategori.nama_kategori')
+            ->join('kategori', 'kategori.id_kategori = artikel.id_kategori', 'left');
 
-        if ($q !== '') {
+        if (!empty($q)) {
             $builder->like('artikel.judul', $q);
         }
 
-        if ($kategori_id !== '') {
+        if (!empty($kategori_id)) {
             $builder->where('artikel.id_kategori', $kategori_id);
         }
 
-        $data['artikel'] = $builder->paginate(10);
-        $data['pager'] = $model->pager;
-        $data['title'] = $title;
-        $data['q'] = $q;
-        $data['kategori_id'] = $kategori_id;
+        $artikel = $builder->paginate(5, 'default', $page);
+        $pager = $model->pager;
 
-        // untuk dropdown kategori
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON([
+                'artikel' => $artikel,
+                'pager' => [
+                    'links' => $pager->links('default'),
+                ],
+            ]);
+        }
+
         $kategoriModel = new KategoriModel();
-        $data['kategori'] = $kategoriModel->findAll();
-
-        return view('artikel/admin_index', $data);
+        return view('artikel/admin_index', [
+            'kategori' => $kategoriModel->findAll(),
+        ]);
     }
 
     public function add()

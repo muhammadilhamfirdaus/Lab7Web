@@ -27,6 +27,9 @@ $routes->group('admin', function ($routes) {
     $routes->get('artikel/delete/(:any)', 'Artikel::delete/$1');
 });
 
+$routes->get('/admin/artikel', 'Artikel::admin_index');
+
+
 
 // Routes Login & Logout
 $routes->get('/user/login', 'User::login');

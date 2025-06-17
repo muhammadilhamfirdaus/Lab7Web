@@ -213,3 +213,56 @@ Modul ini membahas penggunaan AJAX untuk menampilkan dan menghapus data artikel 
 
 ### Tombol +Tambah Artikel AJAX
 ![screenshot](img/+TambahArtikel.png)
+
+
+# Modul 9 – AJAX Pagination & Search
+
+## 🎯 Tujuan Praktikum
+
+- Menerapkan pencarian dan pagination dinamis menggunakan AJAX
+- Meningkatkan UX aplikasi dengan tampilan real-time dan interaktif
+- Menggunakan jQuery untuk permintaan data backend di CodeIgniter 4
+
+---
+
+## 🔧 Teknologi
+
+- CodeIgniter 4
+- Bootstrap 5
+- jQuery 3.6+
+
+---
+
+## 🛠️ Langkah Pengerjaan
+
+1. Modifikasi `admin_index()` pada controller `Artikel` untuk mendukung AJAX
+2. Ubah `admin_index.php`:
+   - Tambahkan form pencarian dan filter kategori
+   - Tampilkan data artikel dan pagination dengan jQuery
+3. Tambahkan indikator loading saat request
+4. AJAX otomatis fetch data saat search dan filter berubah
+
+---
+
+## 🧪 Fitur yang Dibuat
+
+| Fitur          | Status |
+|----------------|--------|
+| AJAX Search    | ✅     |
+| AJAX Pagination| ✅     |
+| Loading State  | ✅     |
+| Kategori Filter| ✅     |
+
+---
+
+## 📸 Tampilan
+
+| 1️⃣ | Tampilan awal halaman admin | Setelah membuka `/admin/artikel` |
+![screenshot](img/admin_artikel.png)
+| 2️⃣ | Setelah melakukan pencarian | Isi kolom search, klik "Cari" |
+![screenshot](img/cari.png)
+| 3️⃣ | Filter kategori aktif | Pilih kategori tertentu |
+![screenshot](img/kategori_artikel.png)
+| 4️⃣ | Pagination AJAX berhasil | Klik halaman 2, data berubah tanpa reload |
+![screenshot](img/pagination_klik.png)
+---
