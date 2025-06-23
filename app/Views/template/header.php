@@ -28,19 +28,34 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
+            color: #ecf0f1;
+            background-color: #1e293b;
+            /* ganti dari light menjadi gelap */
             padding: 0;
         }
 
+
         #container {
-            max-width: 1200px;
+            max-width: 1500px;
             margin: 0 auto;
-            background: #fff;
+            background: #2c3e50;
+            /* dari putih ke dark */
             border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            color: #ecf0f1;
         }
+
+        a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #16e0b0;
+            text-decoration: underline;
+        }
+
 
         /* --- HEADER --- */
         header {
