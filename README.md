@@ -392,4 +392,10 @@ Penggunaan Postman sangat membantu dalam proses pengujian endpoint HTTP.
 
 Format JSON disarankan untuk komunikasi data antar aplikasi.
 
+# 🌐 Web Portal Berita — UI/UX Update ✨
+
+## 🔄 Pembaruan Terbaru
+
+Artikel
+![screenshot](img/artikel_update.png)
 
