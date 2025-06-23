@@ -399,3 +399,6 @@ Format JSON disarankan untuk komunikasi data antar aplikasi.
 Artikel
 ![screenshot](img/artikel_update.png)
 
+Admin Artikel
+![screenshot](img/admin_artikel_update.png)
+
