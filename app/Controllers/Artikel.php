@@ -149,4 +149,13 @@ class Artikel extends BaseController
         ]);
     }
 
+    public function dashboard()
+    {
+        $data = [
+            'title' => 'Dashboard Admin'
+        ];
+
+        return view('admin_dashboard', $data);
+    }
+
 }

@@ -308,7 +308,7 @@ tambahkan
  $routes->resource('post', ['controller' => 'PostApi']);
 
 📸 Screenshot baris kode routes
-![screenshot](img/controller_api_post.png)
+![screenshot](img/controler_api_post.png)
 
 ## 🧪 5. Uji Endpoint dengan Postman
 

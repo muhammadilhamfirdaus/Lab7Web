@@ -21,6 +21,7 @@ $routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 
 $routes->group('admin', function ($routes) {
+    $routes->get('/admin/dashboard', 'Admin::dashboard');
     $routes->get('artikel', 'Artikel::admin_index');
     $routes->add('artikel/add', 'Artikel::add');
     $routes->add('artikel/edit/(:any)', 'Artikel::edit/$1');
@@ -52,6 +53,8 @@ $routes->get('/api/post', 'Artikel::postApi');
 $routes->resource('post', ['controller' => 'PostApi']);
 $routes->options('post', 'PostApi::options');
 $routes->options('post/(:any)', 'PostApi::options');
+
+ $routes->get('dashboard', 'Admin::dashboard'); 
 
 
 

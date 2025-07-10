@@ -162,9 +162,6 @@
             background-color: #16a085;
         }
 
-
-
-
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -192,21 +189,35 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <a href="<?= base_url('/admin/artikel'); ?>" class="active">Dashboard</a>
-        <a href="<?= base_url('/admin/artikel'); ?>">Artikel</a>
-        <a href="<?= base_url('/admin/artikel/add'); ?>">Tambah Artikel</a>
-    </nav>
+    <?php
+        $uri = service('uri');
+        $segment2 = $uri->getSegment(2);
+        $segment3 = $uri->getSegment(3);
+    ?>
+   <nav class="navbar">
+    <a href="<?= base_url('/admin/dashboard'); ?>" 
+       class="<?= ($segment2 == 'dashboard') ? 'active' : ''; ?>">
+        Dashboard
+    </a>
+
+    <a href="<?= base_url('/admin/artikel'); ?>" 
+       class="<?= ($segment2 == 'artikel' && !$segment3) ? 'active' : ''; ?>">
+        Artikel
+    </a>
+
+    <a href="<?= base_url('/admin/artikel/add'); ?>" 
+       class="<?= ($segment2 == 'artikel' && $segment3 == 'add') ? 'active' : ''; ?>">
+        Tambah Artikel
+    </a>
+</nav>
+
 
     <!-- Content -->
     <main class="container">
         <h2>Selamat Datang di Dashboard Admin</h2>
         <p>Kelola semua konten artikel berita dari satu tempat dengan tampilan yang bersih dan profesional.</p>
-        <!-- Tambahkan konten dinamis di sini -->
         <?= $this->renderSection('content') ?>
     </main>
-
-
 
 </body>
 
