@@ -396,9 +396,29 @@ Format JSON disarankan untuk komunikasi data antar aplikasi.
 
 ## 🔄 Pembaruan Terbaru
 
+Home
+![screenshot](img/home_update.png)
+
 Artikel
 ![screenshot](img/artikel_update.png)
 
+About
+![screenshot](img/about.png)
+
+About
+![screenshot](img/contact_update.png)
+
 Admin Artikel
 ![screenshot](img/admin_artikel_update.png)
+
+Admin add artikel
+![screenshot](img/admin_tambah_update.png)
+
+Admin dashboard
+![screenshot](img/admin_dahboard_update.png)
+
+
+
+
+
 

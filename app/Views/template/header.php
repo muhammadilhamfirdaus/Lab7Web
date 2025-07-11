@@ -212,6 +212,49 @@
             color: #1abc9c;
         }
 
+        .card-article {
+            background: #1f2a37;
+            /* warna gelap kebiruan */
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+            /* garis halus pembatas */
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-article:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-article+.card-article {
+            border-top: 1px solid #475569;
+        }
+
+        .card-article h2 a {
+            color: #10b981;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .card-article .kategori {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+
+        .card-article .entry-content p {
+            color: #e5e7eb;
+        }
+
+        .card-article .read-more {
+            color: #3bffbb;
+            font-weight: 600;
+        }
+
+
 
 
         /* --- FOOTER --- */

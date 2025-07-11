@@ -20,6 +20,6 @@ class Dashboard extends BaseController
             'artikelTerbaru' => $artikelModel->orderBy('created_at', 'DESC')->limit(5)->findAll()
         ];
 
-        return view('admin/admin_dashboard', $data);
+        return view('artikel/admin_dashboard', $data);
     }
 }
