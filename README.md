@@ -415,7 +415,7 @@ Admin add artikel
 ![screenshot](img/admin_tambah_update.png)
 
 Admin dashboard
-![screenshot](img/admin_dahboard_update.png)
+![screenshot](img/admin_dashboard_update.png)
 
 
 
