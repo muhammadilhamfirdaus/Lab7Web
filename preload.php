@@ -50,7 +50,7 @@ class preload
                 '/system/Commands/',
                 '/system/Publisher/',
                 '/system/ComposerScripts.php',
-                // Not Class/Function files.
+                // Not Class/Function files.s
                 '/system/Config/Routes.php',
                 '/system/Language/',
                 '/system/bootstrap.php',

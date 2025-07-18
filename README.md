@@ -425,6 +425,141 @@ http://artikelilham.free.nf/
 
 
 
+# 📝 Praktikum 11 - VueJS & API CodeIgniter 4
+
+## 🎯 Tujuan
+- Menghubungkan frontend **VueJS 3** dengan backend **REST API CodeIgniter 4**
+- Menampilkan data artikel, serta fitur tambah, edit, dan hapus
+- Mengatasi error CORS antara port berbeda
+
+---
+
+## 📁 Struktur Folder
+```
+lab8_vuejs/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── app.js
+```
+
+---
+
+## ⚙️ Backend (CodeIgniter 4)
+
+### 🔹 Controller: `PostApi.php`
+Terletak di: `app/Controllers/PostApi.php`  
+Menggunakan `ResourceController` untuk menangani:
+- `GET /post` → Ambil semua data
+- `POST /post` → Tambah data
+- `PUT /post/{id}` → Update data
+- `DELETE /post/{id}` → Hapus data
+- `OPTIONS` → Untuk menangani CORS preflight
+
+### 🔹 Routing: `app/Config/Routes.php`
+```php
+$routes->resource('post', ['controller' => 'PostApi']);
+$routes->options('post', 'PostApi::options');
+$routes->options('post/(:any)', 'PostApi::options');
+```
+
+---
+
+## 🌐 Frontend (VueJS 3)
+
+### 🔹 `index.html`
+Berisi tampilan daftar artikel dan form tambah/edit menggunakan VueJS dan Axios via CDN.
+
+### 🔹 `app.js`
+Mengatur interaksi Vue dengan API:
+- `loadData()` → fetch data artikel
+- `saveData()` → post atau put
+- `hapus()` → delete
+- `edit()` dan `tambah()` → show modal form
+
+### 🔹 `style.css`
+Tampilan modern berbasis warna biru, form responsive, dan table UI yang rapi.
+
+---
+
+## 💡 Testing API via Postman
+
+| Aksi     | Method | URL                         | Body                       |
+|----------|--------|-----------------------------|----------------------------|
+| Lihat    | GET    | `http://localhost:8080/post`| –                          |
+| Tambah   | POST   | `http://localhost:8080/post`| `judul`, `isi`             |
+| Edit     | PUT    | `http://localhost:8080/post/{id}`| `judul`, `isi`    |
+| Hapus    | DELETE | `http://localhost:8080/post/{id}`| –                    |
+
+---
+
+## 🖼️ Screenshot Hasil
+
+- Daftar artikel
+
+![screenshot](img/vue.png)
+
+- Form tambah 
+![screenshot](img/tambah.png)
+
+hasil
+
+![screenshot](img/hasil_tambah.png)
+
+- Form tambah edit
+![screenshot](img/editvue.png)
+
+hasil
+
+![screenshot](img/hasil_edit.png)
+
+
+- Data berhasil dihapus
+![screenshot](img/delete.png)
+
+hasil
+
+![screenshot](img/hasil_delete.png)
+
+
+
+---
+
+## 🚀 Cara Menjalankan
+
+### Backend
+```bash
+cd C:\xampp\htdocs\lab11_ci\ci4
+php spark serve
+```
+
+### Frontend
+Akses via browser:
+```
+http://localhost/lab8_vuejs/index.html
+```
+
+
+
+## 🔧 Catatan Tambahan
+- Gunakan `header("Access-Control-Allow-Origin: *")` di semua method controller
+- Pastikan Vue dan API berjalan di origin yang berbeda sudah ditangani oleh `OPTIONS`
+- Cek console F12 jika data tidak tampil
+
+---
+
+## 📌 Penutup
+Project ini melatih integrasi VueJS 3 dengan REST API menggunakan pendekatan modern, serta mengatasi tantangan seperti CORS dan struktur data dinamis.
+
+
+Link Repo Github :
+
+https://github.com/muhammadilhamfirdaus/Lab11Web_VueJS
+
+
+
 
 
 
